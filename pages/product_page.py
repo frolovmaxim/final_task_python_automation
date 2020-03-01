@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 
 
 class ProductPage(BasePage):
-    def go_to_modal_screen(self):
+    def add_to_basket(self):
         login_link = self.browser.find_element(*MainPageLocators.BASKET_LINK)
         login_link.click()
         
@@ -13,4 +13,10 @@ class ProductPage(BasePage):
         
     def should_be_title_price_matching(self):
         assert self.is_text_matching(*MainPageLocators.TITLE_TOP_LINK,*MainPageLocators.TITLE_LOW_LINK) and self.is_text_matching(*MainPageLocators.TITLE_TOP_PRICE_LINK,*MainPageLocators.TITLE_LOW_PRICE_LINK)
+        
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*MainPageLocators.MESSAGE_LINK), "Success message is presented, but should not be"
+            
+    def should_not_disappeared_success_message(self):
+        assert self.is_disappeared(*MainPageLocators.MESSAGE_LINK), "Success message is disappeared, but should not be"
     
