@@ -1,6 +1,7 @@
 from pages.base_page import BasePage
 from pages.locators import MainPageLocators
 from selenium.webdriver.common.by import By
+from pages.locators import BasketPageLocators
 
 
 class ProductPage(BasePage):
@@ -20,3 +21,8 @@ class ProductPage(BasePage):
     def should_not_disappeared_success_message(self):
         assert self.is_disappeared(*MainPageLocators.MESSAGE_LINK), "Success message is disappeared, but should not be"
     
+    def should_not_be_product_in_basket(self):
+        assert self.is_not_element_present(*BasketPageLocators.BASKET_PRODUCT_LINK), "Success message is presented, but should not be"
+    
+    def should_be_empty_basket(self):
+        assert self.is_element_present(*BasketPageLocators.BASKET_IS_EMPTY), "Products in busket is not presented"    

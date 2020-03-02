@@ -8,10 +8,16 @@ class MainPageLocators():
     TITLE_TOP_PRICE_LINK = (By.CSS_SELECTOR, "#messages > div.alert.alert-safe.alert-noicon.alert-info.fade.in > div > p:nth-child(1) > strong")
     TITLE_LOW_PRICE_LINK = (By.CSS_SELECTOR, ".product_main > p.price_color")
 
-#class LoginPageLocators():
-    #LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-    #LOGIN_REGISTER = (By.CSS_SELECTOR, "#register_form")
+class LoginPageLocators():
+    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
+    LOGIN_REGISTER = (By.CSS_SELECTOR, "#register_form")
     
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")    
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_IS_EMPTY = (By.XPATH, "//*[@id='content_inner']/p")
+    
+class BasketPageLocators():
+    BASKET_LINK = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
+    BASKET_PRODUCT_LINK = (By.CSS_SELECTOR, "#basket_formset")
+    BASKET_IS_EMPTY = (By.XPATH, "//*[@id='content_inner']/p")
