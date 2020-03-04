@@ -5,6 +5,10 @@ from pages.locators import BasketPageLocators
 
 
 class ProductPage(BasePage):
+    def go_to_modal_screen(self):
+        login_link = self.browser.find_element(*MainPageLocators.BASKET_LINK)
+        login_link.click()
+        
     def add_to_basket(self):
         login_link = self.browser.find_element(*MainPageLocators.BASKET_LINK)
         login_link.click()
