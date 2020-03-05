@@ -17,7 +17,7 @@ class LoginPageLocators():
     REGISTER_SUBMIT = (By.NAME, "registration_submit")
     
 class BasePageLocators():
-    LOGIN_LINK = (By.CSS_SELECTOR, "#registration_link")
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
     BASKET_IS_EMPTY = (By.XPATH, "//*[@id='content_inner']/p")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
